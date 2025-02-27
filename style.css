@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki de Jogos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>Wiki de Jogos</header>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Jogos</a>
+        <a href="#">Plataformas</a>
+        <a href="#">Sobre</a>
+    </nav>
+    <div class="container">
+        <h2>Bem-vindo à Wiki de Jogos</h2>
+        <p>Aqui você encontrará informações detalhadas sobre diversos jogos, suas plataformas e muito mais.</p>
+    </div>
+    <footer>
+        &copy; 2025 Wiki de Jogos - Todos os direitos reservados
+    </footer>
+</body>
+</html>
