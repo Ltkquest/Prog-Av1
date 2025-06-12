@@ -1,25 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki CG</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wiki CG</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    #search {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    ul li {
+      margin-bottom: 5px;
+    }
+  </style>
 </head>
 <body>
-    <header>Wiki CG</header>
-    <nav>
-        <a href="#">Início</a>
-        <a href="#">Jogos</a>
-        <a href="#">Plataformas</a>
-        <a href="#">Sobre</a>
-    </nav>
-    <div class="container">
-        <h2>Bem-vindo à Wiki CG</h2>
-        <p>Aqui você encontrará informações detalhadas sobre jogos, suas plataformas, e muito mais.</p>
-    </div>
-    <footer>
-        &copy; 2025 Wiki de Jogos - Todos os direitos reservados
-    </footer>
+  <header>Wiki CG</header>
+
+  <nav>
+    <a href="#" onclick="mostrarSecao('inicio')">Início</a>
+    <a href="#" onclick="mostrarSecao('jogos')">Jogos</a>
+    <a href="#" onclick="mostrarSecao('plataformas')">Plataformas</a>
+    <a href="#" onclick="mostrarSecao('sobre')">Sobre</a>
+  </nav>
+
+  <div class="container">
+    <!-- INÍCIO -->
+    <section id="inicio">
+      <h2>Bem-vindo à Wiki CG</h2>
+      <p>Aqui você encontrará informações detalhadas sobre jogos, suas plataformas, e muito mais.</p>
+    </section>
+
+    <!-- JOGOS -->
+    <section id="jogos" class="hidden">
+      <h2>Jogos do Momento</h2>
+      <input type="text" id="search" placeholder="Buscar jogo...">
+      <ul id="jogos-lista">
+        <li>Among Us</li>
+        <li>Call of Duty</li>
+        <li>Fortnite</li>
+        <li>League of Legends</li>
+        <li>Minecraft</li>
+        <li>Valorant</li>
+      </ul>
+    </section>
+
+    <!-- PLATAFORMAS -->
+    <section id="plataformas" class="hidden">
+      <h2>Plataformas de Jogos</h2>
+      <ul>
+        <li><strong>Steam</strong> – Plataforma de distribuição digital com milhares de jogos para PC.</li>
+        <li><strong>Ubisoft Connect</strong> – Plataforma com jogos da Ubisoft, como Assassin's Creed.</li>
+        <li><strong>Riot Games</strong> – Desenvolvedora de jogos como League of Legends, Valorant.</li>
+        <li><strong>Epic Games Store</strong> – Plataforma conhecida por Fortnite e promoções semanais.</li>
+        <li><strong>Battle.net</strong> – Plataforma da Blizzard, com jogos como Overwatch e Diablo.</li>
+      </ul>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="hidden">
+      <h2>Sobre o Site</h2>
+      <p>Este site foi desenvolvido como um projeto acadêmico com o objetivo de centralizar informações sobre jogos e plataformas.</p>
+      <p>Você encontrará listas de jogos populares, suas plataformas, desenvolvedoras e muito mais, com uma navegação simples e visual agradável.</p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Wiki de Jogos - Todos os direitos reservados
+  </footer>
+
+  <script>
+    function mostrarSecao(secaoId) {
+      const secoes = document.querySelectorAll("section");
+      secoes.forEach(secao => secao.classList.add("hidden"));
+      document.getElementById(secaoId).classList.remove("hidden");
+    }
+
+    // Filtro da aba "Jogos"
+    const search = document.getElementById("search");
+    const jogos = document.querySelectorAll("#jogos-lista li");
+
+    if (search) {
+      search.addEventListener("input", () => {
+        const termo = search.value.toLowerCase();
+        jogos.forEach(jogo => {
+          jogo.style.display = jogo.textContent.toLowerCase().includes(termo) ? "list-item" : "none";
+        });
+      });
+    }
+  </script>
 </body>
 </html>

@@ -42,3 +42,18 @@ footer {
     padding: 10px;
     margin-top: 20px;
 }
+.hidden {
+    display: none;
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: none;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
